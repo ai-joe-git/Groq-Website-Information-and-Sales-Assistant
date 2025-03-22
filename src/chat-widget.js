@@ -624,41 +624,34 @@
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }
     
-    // Format message text for better readability and make links clickable
-    function formatMessageText(text) {
-      // First, escape any HTML (security measure)
-      text = escapeHtml(text);
-      
-      // Replace URLs with clickable links but exclude trailing punctuation
-      text = text.replace(
-        /(https?:\/\/[^\s]+?)([.,;:!?])?(\s|$)/g, 
-        function(match, url, punctuation, trailing) {
-          return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + url + '</a>' + (punctuation || '') + trailing;
-        }
-      );
-      
-      // Add special styling for links that might be important (customize as needed)
-      text = text.replace(
-        /<a href="(https?:\/\/[^"]+\/(contact|signup|order|buy|purchase)[^"]*)"([^>]+)>([^<]+)<\/a>/gi,
-        '<a href="$1"$3 class="highlight-link" style="color: white !important; background: ' + activeConfig.accentColor + ';">$4</a>'
-      );
-      
-      // Replace line breaks with <br> tags
-      text = text.replace(/\n/g, '<br>');
-      
-      // Add paragraph breaks for better readability
-      text = text.replace(/<br><br>/g, '</p><p>');
-      
-      // Wrap in paragraph tags if not already
-      if (!text.startsWith('<p>')) {
-        text = '<p>' + text;
-      }
-      if (!text.endsWith('</p>')) {
-        text = text + '</p>';
-      }
-      
-      return text;
+// Format message text for better readability and make links clickable
+function formatMessageText(text) {
+  // Escape HTML (security measure)
+  text = escapeHtml(text);
+  
+  // Replace URLs with clickable links but exclude trailing punctuation
+  text = text.replace(
+    /(https?:\/\/[^\s]+?)([.,;:!?])?(\s|$)/g,
+    function(match, url, punctuation, trailing) {
+      return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + url + '</a>' + (punctuation || '') + trailing;
     }
+  );
+  
+  // Add paragraph breaks for better readability
+  text = text.replace(/\n/g, '<br>');
+  
+  // Wrap in paragraph tags if not already
+  if (!text.startsWith('<p>')) {
+    text = '<p>' + text;
+  }
+  
+  if (!text.endsWith('</p>')) {
+    text = text + '</p>';
+  }
+  
+  return text;
+}
+
     
     // Helper function to escape HTML
     function escapeHtml(text) {

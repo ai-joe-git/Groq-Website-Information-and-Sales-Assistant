@@ -1,0 +1,9 @@
+groq-website-assistant/
+├── README.md               # Complete documentation
+├── LICENSE                 # MIT License
+├── demo.html               # Demo implementation
+├── src/
+│   ├── chat-widget.js      # Main JavaScript file
+│   └── chat-widget.css     # Styling for the chat widget
+└── api/
+    └── chat.js             # Vercel API route

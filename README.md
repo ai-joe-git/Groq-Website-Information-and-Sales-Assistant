@@ -1,4 +1,3 @@
-text
 # Groq Website Information & Sales Assistant
 
 ![Groq Website Assistant](https://i.imgur.com/example-image.png)
@@ -29,8 +28,8 @@ A high-performance AI chatbot powered by Groq API that helps answer customer que
 
 Add this code to your website before the closing `</body>` tag:
 
-<!-- Groq Website Assistant --> <script src="https://your-vercel-app.vercel.app/src/chat-widget.js"></script> <script> initGroqAssistant({ apiEndpoint: 'https://your-vercel-app.vercel.app/api/chat', companyName: 'Your Company', welcomeMessage: 'Hello! How can I help you today?', systemPrompt: `You are a helpful assistant for [Your Company]. Key information: - Product: [Your product] - Price: [Your pricing] Your job is to be helpful and informative.` }); </script>
-text
+`<!-- Groq Website Assistant --> <script src="https://your-vercel-app.vercel.app/src/chat-widget.js"></script> <script> initGroqAssistant({ apiEndpoint: 'https://your-vercel-app.vercel.app/api/chat', companyName: 'Your Company', welcomeMessage: 'Hello! How can I help you today?', systemPrompt: `You are a helpful assistant for [Your Company]. Key information: - Product: [Your product] - Price: [Your pricing] Your job is to be helpful and informative.` }); </script>`
+
 
 That's it! The chat widget will appear on your website.
 
@@ -95,8 +94,7 @@ text
 
 You can add custom CSS to override any styling:
 
-<style> .chat-button { background: #ff5722 !important; } .chat-header { background: linear-gradient(90deg, #ff5722, #ff9800) !important; } /* Add any custom styles here */ </style>
-text
+`<style> .chat-button { background: #ff5722 !important; } .chat-header { background: linear-gradient(90deg, #ff5722, #ff9800) !important; } /* Add any custom styles here */ </style>`
 
 ### Alternate Models
 
@@ -108,12 +106,11 @@ Choose the model that fits your needs:
 
 ### Basic Example
 
-<script src="https://your-vercel-app.vercel.app/src/chat-widget.js"></script> <script> initGroqAssistant({ apiEndpoint: 'https://your-vercel-app.vercel.app/api/chat', companyName: 'ABC Company', welcomeMessage: 'Hi there! How can I help you today?' }); </script>
-text
+`<script src="https://your-vercel-app.vercel.app/src/chat-widget.js"></script> <script> initGroqAssistant({ apiEndpoint: 'https://your-vercel-app.vercel.app/api/chat', companyName: 'ABC Company', welcomeMessage: 'Hi there! How can I help you today?' }); </script>`
 
 ### E-commerce Example
 
-<script src="https://your-vercel-app.vercel.app/src/chat-widget.js"></script> <script> initGroqAssistant({ apiEndpoint: 'https://your-vercel-app.vercel.app/api/chat', companyName: 'Fashion Boutique', welcomeMessage: 'Welcome! Looking for something specific today?', theme: 'light', position: 'right', accentColor: '#d81b60', systemPrompt: `You are a shopping assistant for Fashion Boutique. Store information: - We sell premium clothing, accessories, and footwear - Free shipping on orders over $50 - 30-day returns policy Current promotions: - 20% off summer collection with code SUMMER20 Your job is to help customers find products and answer questions.` }); </script>
+`<script src="https://your-vercel-app.vercel.app/src/chat-widget.js"></script> <script> initGroqAssistant({ apiEndpoint: 'https://your-vercel-app.vercel.app/api/chat', companyName: 'Fashion Boutique', welcomeMessage: 'Welcome! Looking for something specific today?', theme: 'light', position: 'right', accentColor: '#d81b60', systemPrompt: `You are a shopping assistant for Fashion Boutique. Store information: - We sell premium clothing, accessories, and footwear - Free shipping on orders over $50 - 30-day returns policy Current promotions: - 20% off summer collection with code SUMMER20 Your job is to help customers find products and answer questions.` }); </script>`
 
 ## Troubleshooting
 

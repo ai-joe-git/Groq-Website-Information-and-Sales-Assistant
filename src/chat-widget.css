@@ -405,3 +405,31 @@
     width: 280px;
   }
 }
+
+
+/* Bot Message Styling */
+.bot-message {
+  background: rgba(255, 255, 255, 0.08); /* Matches welcome message background */
+  color: #ffffff; /* Ensures consistent text color */
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  border-radius: 18px; /* Rounded corners for consistency */
+  padding: 12px 15px; /* Matches padding of welcome message */
+  font-size: 14px; /* Ensures consistent font size */
+  line-height: 1.5; /* Improves readability */
+  max-width: 85%; /* Keeps bubble width consistent */
+  word-wrap: break-word;
+}
+
+.bot-message p {
+  margin: 0;
+}
+
+.bot-message a {
+  color: #75a7ff; /* Matches clickable link color */
+  text-decoration: underline;
+}
+
+.bot-message a:hover {
+  color: #2979ff; /* Slightly darker hover effect for links */
+}

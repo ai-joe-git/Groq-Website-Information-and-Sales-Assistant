@@ -55,7 +55,6 @@ model: 'llama-3.1-8b-instant', // or 'llama-3.3-70b-versatile'
 systemPrompt: Detailed instructions for the AI assistant...
 });
 
-text
 
 ### Customizing the System Prompt
 

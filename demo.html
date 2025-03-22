@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groq Website Assistant Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+      color: #333;
+    }
+    .demo-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #2979ff, #1565c0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+    .demo-section {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .demo-section h2 {
+      margin-top: 0;
+      color: #1565c0;
+    }
+    .code-block {
+      background: #f0f4f8;
+      border-radius: 5px;
+      padding: 20px;
+      overflow-x: auto;
+      font-family: monospace;
+      margin: 20px 0;
+    }
+    .theme-toggle {
+      display: flex;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .theme-button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .theme-button.dark {
+      background: #1e2436;
+      color: white;
+    }
+    .theme-button.light {
+      background: #ffffff;
+      color: #1e2436;
+      border: 1px solid #ddd;
+    }
+    .theme-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .position-toggle {
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #1565c0;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-container">
+    <header>
+      <h1>Groq Website Assistant</h1>
+      <p>A high-performance AI chatbot powered by Groq API that helps answer customer questions and drive sales.</p>
+    </header>
+    
+    <section class="demo-section">
+      <h2>Live Demo</h2>
+      <p>Try the assistant using the chat button in the bottom right corner. You can customize its appearance below.</p>
+      
+      <div class="theme-toggle">
+        <h3>Theme:</h3>
+        <button class="theme-button dark" onclick="changeTheme('dark')">Dark Mode</button>
+        <button class="theme-button light" onclick="changeTheme('light')">Light Mode</button>
+      </div>
+      
+      <div class="position-toggle">
+        <h3>Position:</h3>
+        <button class="theme-button dark" onclick="changePosition('left')">Left Side</button>
+        <button class="theme-button light" onclick="changePosition('right')">Right Side</button>
+      </div>
+    </section>
+    
+    <section class="demo-section">
+      <h2>Implementation Code</h2>
+      <p>Add this code to your website to integrate the Groq Website Assistant:</p>
+      <div class="code-block">
+        <pre><code>&lt;!-- Groq Website Assistant --&gt;
+&lt;script src="https://Groq-Website-Information-and-Sales-Assistant.vercel.app/src/chat-widget.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  initGroqAssistant({
+    apiEndpoint: 'https://Groq-Website-Information-and-Sales-Assistant.vercel.app/api/chat',
+    companyName: 'Your Company',
+    welcomeMessage: 'Hello! How can I help you today?',
+    theme: 'dark', // or 'light'
+    position: 'right', // or 'left'
+    systemPrompt: `You are a helpful assistant for [Your Company].
+    
+    Company details:
+    - Products: [Your products]
+    - Pricing: [Your pricing]
+    
+    Your job is to be helpful and informative.`
+  });
+&lt;/script&gt;</code></pre>
+      </div>
+    </section>
+    
+    <footer>
+      <p>Created with ❤️ using <a href="https://console.groq.com" target="_blank">Groq API</a> | <a href="https://github.com/ai-joe-git/Groq-Website-Information-and-Sales-Assistant" target="_blank">GitHub Repository</a></p>
+    </footer>
+  </div>
+  
+  <script src="src/chat-widget.js"></script>
+  <script>
+    // Demo configuration
+    const demoConfig = {
+      apiEndpoint: '/api/chat', // For local demo
+      companyName: 'Demo Company',
+      welcomeMessage: 'Hi there! This is a demo of the Groq Website Assistant. Ask me anything about this project!',
+      theme: 'dark',
+      position: 'right',
+      accentColor: '#2979ff',
+      systemPrompt: `You are a helpful assistant for the Groq Website Assistant demo page.
+      
+Information about this project:
+- This is a customizable AI chat widget powered by Groq API
+- It can be easily added to any website
+- It supports both dark and light themes
+- It can be positioned on either the left or right side of the screen
+- It allows full customization of the system prompt
+- It uses Groq's fast inference capabilities
+
+Your job is to be helpful, informative, and explain how this assistant works and how to implement it.`
+    };
+    
+    // Initialize with default configuration
+    initGroqAssistant(demoConfig);
+    
+    // Theme toggling functionality
+    function changeTheme(theme) {
+      // Remove existing chat widget
+      const existingWidget = document.querySelector('.chat-widget');
+      if (existingWidget) {
+        existingWidget.remove();
+      }
+      
+      // Initialize with new theme
+      const currentConfig = {...demoConfig, theme: theme};
+      initGroqAssistant(currentConfig);
+    }
+    
+    // Position toggling functionality
+    function changePosition(position) {
+      // Remove existing chat widget
+      const existingWidget = document.querySelector('.chat-widget');
+      if (existingWidget) {
+        existingWidget.remove();
+      }
+      
+      // Initialize with new position
+      const currentConfig = {...demoConfig, position: position};
+      initGroqAssistant(currentConfig);
+    }
+  </script>
+</body>
+</html>

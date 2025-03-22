@@ -1,6 +1,6 @@
 # Groq Website Information & Sales Assistant
 
-![Groq Website Assistant](https://i.imgur.com/example-image.png)
+![Groq Website Assistant](https://raw.githubusercontent.com/ai-joe-git/Groq-Website-Information-and-Sales-Assistant/refs/heads/main/logogroqchat.png)
 
 A high-performance AI chatbot powered by Groq API that helps answer customer questions and drive sales. This lightweight, customizable solution easily integrates with any website and provides a natural, typing-effect response system.
 
